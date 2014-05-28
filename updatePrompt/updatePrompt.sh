@@ -51,8 +51,8 @@ jamfHelper='/Library/Application Support/JAMF/bin/jamfHelper.app/Contents/MacOS/
 
 ## Assign variables from JSS
 
-applicationTitle="$4"
-processName="$5"
+applicationTitle="Firefox"
+processName="Firefox"
 customTrigger="$6"
 
 
@@ -99,7 +99,7 @@ function promptUser()
 # Get application PID
 PID=`ps aux | grep -w "$processName" | grep -v grep | awk '{print $2}'`
 
-if [ ! -z $PID ] # Detect if application is running
+if [ ! -z "$PID" ] # Detect if application is running
 	then
 		# Prompt user to quit the running application
 		echo "$applicationTitle is running, prompting user to quit"
