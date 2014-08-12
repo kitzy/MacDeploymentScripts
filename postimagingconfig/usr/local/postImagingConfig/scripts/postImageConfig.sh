@@ -15,11 +15,7 @@ fi
 
 # Fires up Big Honking Text. Notifies the user that their machine is being modified. Mouse clicks are ignored.
 
-# /usr/local/postImagingConfig/resources/BigHonkingText -w 100% -h 100% -m -p 0 "  Post imaging configuration in progress, please wait.  " >>/dev/null 2>&1 &
-
-# Using jamfHelper instead, in an effort to minimize reliance on 3rd party tools.
-
-/Library/Application Support/JAMF/bin/jamfHelper.app/Contents/MacOS/jamfHelper -windowType fs -description "Post imaging configuration in process, please wait." -icon /usr/local/postImagingConfig/resources/icon.png
+/usr/local/postImagingConfig/resources/BigHonkingText -w 100% -h 100% -m -p 0 "  Post imaging configuration in progress, please wait.  " >>/dev/null 2>&1 &
 
 # Check to make sure the machine has enrolled before continuing
 
