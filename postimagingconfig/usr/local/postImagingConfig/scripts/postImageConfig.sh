@@ -1,5 +1,19 @@
 #!/bin/bash 
 
+# Set log location
+
+logLocation="/var/log/"
+
+# Create log file
+    
+NOW="$(date +"%Y-%m-%d-%H-%M")"
+echo "Creating $logLocation/$NOW.postImagingConfig.log"
+touch $logLocation/$NOW.postImagingConfig.log
+    
+# Redirect stderr to stdout and print all to log
+
+exec 2>&1 > >(tee $logLocation/$NOW.postImagingConfig.log)
+
 
 # Check if JAMF binary exists
 
