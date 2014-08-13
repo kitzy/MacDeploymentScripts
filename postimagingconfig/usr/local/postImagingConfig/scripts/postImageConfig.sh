@@ -29,7 +29,7 @@ fi
 
 # Fires up Big Honking Text. Notifies the user that their machine is being modified. Mouse clicks are ignored.
 
-/usr/local/postImagingConfig/resources/BigHonkingText -w 100% -h 100% -m -p 0 "  Post imaging configuration in progress, please wait.  " >>/dev/null 2>&1 &
+/usr/local/postImagingConfig/resources/BigHonkingText -w 100% -h 100% -m -p 0 "  Post imaging configuration in progress, please wait.  "
 
 # Check to make sure the machine has enrolled before continuing
 
