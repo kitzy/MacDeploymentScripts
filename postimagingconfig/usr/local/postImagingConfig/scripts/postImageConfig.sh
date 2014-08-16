@@ -57,13 +57,13 @@ echo "Enrollment complete"
 
 # Enforce management framework, update inventory and run all config policies
 
-usr/sbin/jamf manage
-usr/sbin/jamf recon
-usr/sbin/jamf policy -event config
+/usr/sbin/jamf manage
+/usr/sbin/jamf recon
+/usr/sbin/jamf policy -event config
 
 # Update inventory one last time since we installed software
 
-usr/sbin/jamf recon
+/usr/sbin/jamf recon
 
 # Clean up
 
