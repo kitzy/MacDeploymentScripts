@@ -43,6 +43,13 @@ until [ ! -f "/Library/Application Support/JAMF/FirstRun/Enroll/enroll.sh" ]
     done
 /bin/echo "Enrollment complete"
 
+# Checking to make sure the JSS is available before proceeding
+/usr/sbin/jamf checkJSSConnection -retry 0
+until [ $? = 0 ]
+	do
+		/usr/sbin/jamf checkJSSConnection -retry 0
+	done
+
 # Enforce management framework, update inventory and run all config policies
 /usr/sbin/jamf manage
 /usr/sbin/jamf recon
