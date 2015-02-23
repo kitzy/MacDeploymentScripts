@@ -12,7 +12,13 @@ systemItems=(
 	/Applications/JustCloud.app
 	/Library/Preferences/.3FAD0F65-FC6E-4889-B975-B96CBF807B78
 	/private/var/folders/mh/yprf0vxs3mx_n2lg3tjgqddm0000gn/T/MacKeeper*
-	/private/tmp/MacKeeper*
+	#Following items added by Elliot Jordan, Linde Group
+    /private/tmp/MacKeeperOffers
+    /private/tmp/_--_BRAND_--_.app
+    /private/tmp/brand.tar.gz
+    /private/tmp/com.mackeeper.MacKeeper.Installer.config
+    /private/tmp/preinstall-JustCloud.log
+    /private/tmp/postinstall-JustCloud.log
 )
 
 # Items at the user level to be removed
@@ -61,6 +67,13 @@ function deleteItems()
 ####################
 ### Main Program ###
 ####################
+
+# Kill the apps, if they are running
+# Added by Elliot Jordan, Linde Group
+echo "Killing MacKeeper-related apps"
+killall "JustCloud"
+killall "MacKeeper Helper"
+killall "MacKeeper"
 
 # Delete system level items
 deleteItems systemItems[@]
