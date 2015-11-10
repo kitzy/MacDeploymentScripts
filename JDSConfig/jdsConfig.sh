@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 #
 ##########################################################################################
 #
@@ -30,17 +30,17 @@
 #	jdsConfig.sh
 #
 # SYNOPSIS - How to use
-#	
+#
 # 		Run this script after running the JDS Installer.pkg on an OS X Server.
 # 		This script can be run locally, hardcoding the jssURL, jdsUser, jdsPass, and
 #		allowInvalidCert variables, or it can be run from the JSS using Parameters 4-7.
-# 		
-# 
+#
+#
 # DESCRIPTION
-# 	
+#
 # 		This script uses the jamfds binary to configure and enroll a JDS on OS X server
 #		into a JSS.
-# 
+#
 ####################################################################################################
 #
 # HISTORY
@@ -67,9 +67,13 @@ dnsName=`hostname`
 
 # Do not modify below this line.
 
+# Find jamfds binary location
+
+jamfds=$(which jamfds)
+
 # Check to make sure the jamfds binary is installed.
 
-if [ ! -f /usr/sbin/jamfds ];
+if [ ! -f "$jamfds" ];
 	then
 		echo "ERROR: jamfds binary not found. Please run the JDS installer before using this script."
 		exit 2
@@ -96,21 +100,21 @@ echo "Creating jamfds configuration file"
 if [[ $allowInvalidCert == "yes" ]];
 	then
 		echo "The JDS will trust an invalid certificate."
-		jamfds createConf -url $jssURL -k
-		
+		"$jamfds" createConf -url $jssURL -k
+
 elif [[ $allowInvalidCert == "no" ]];
 	then
 		echo "The JDS will not trust an invalid certificate."
-		jamfds createConf -url $jssURL
+		"$jamfds" createConf -url $jssURL
 fi
 
 # Enroll the JDS
 
 echo "Enrolling JDS..."
 
-jamfds enroll -url $dnsName -u $jdsUser -p $jdsPass
+"$jamfds" enroll -url $dnsName -u $jdsUser -p $jdsPass
 
-jamfds policy
+"$jamfds" policy
 
 # Reboot - in my testing this was needed for the JDS to function properly.
 
