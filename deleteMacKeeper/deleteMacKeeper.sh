@@ -30,7 +30,6 @@ userItems=(
 	Library/Logs/JustCloud
 	Library/Logs/MacKeeper.log
 	Library/Logs/MacKeeper.log.signed
-	Library/Logs/SparkleUpdateLog.log
 	Library/Preferences/.3246584E-0CF8-4153-835D-C7D952862F9D
 	Library/Preferences/com.zeobit.MacKeeper.Helper.plist
 	Library/Preferences/com.zeobit.MacKeeper.plist
