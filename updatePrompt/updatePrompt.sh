@@ -51,8 +51,8 @@ jamfHelper='/Library/Application Support/JAMF/bin/jamfHelper.app/Contents/MacOS/
 
 ## Assign variables from JSS
 
-applicationTitle="Firefox"
-processName="Firefox"
+applicationTitle="$4"
+processName="$5"
 customTrigger="$6"
 
 
