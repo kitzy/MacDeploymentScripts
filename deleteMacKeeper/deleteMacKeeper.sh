@@ -13,12 +13,14 @@ systemItems=(
 	/Library/Preferences/.3FAD0F65-FC6E-4889-B975-B96CBF807B78
 	/private/var/folders/mh/yprf0vxs3mx_n2lg3tjgqddm0000gn/T/MacKeeper*
 	#Following items added by Elliot Jordan, Linde Group
-    /private/tmp/MacKeeperOffers
-    /private/tmp/_--_BRAND_--_.app
-    /private/tmp/brand.tar.gz
-    /private/tmp/com.mackeeper.MacKeeper.Installer.config
-    /private/tmp/preinstall-JustCloud.log
-    /private/tmp/postinstall-JustCloud.log
+    	/private/tmp/MacKeeperOffers
+    	/private/tmp/_--_BRAND_--_.app
+   	/private/tmp/brand.tar.gz
+    	/private/tmp/com.mackeeper.MacKeeper.Installer.config
+    	/private/tmp/preinstall-JustCloud.log
+    	/private/tmp/postinstall-JustCloud.log
+	#Following items added by Emily Kausalik, The Home Depot
+	/private/var/folders/p0/jnvw_chs00l1z75kypvnyxwc0000gp/T/MacKeeper*
 )
 
 # Items at the user level to be removed
@@ -37,6 +39,14 @@ userItems=(
 	Library/Saved\ Application\ State/com.zeobit.MacKeeper.savedState
 	Downloads/MacKeeper*
 	Documents/MacKeeper*
+	#Following items added by Emily Kausalik, The Home Depot
+	Library/LaunchAgents/com.mackeeper.MacKeeper.Helper.plist
+	Library/Application\ Support/MacKeeper
+	Library/Application\ Support/com.mackeeper.MacKeeper
+	Library/Application\ Support/com.macKeeper.MacKeeper.Helper
+	Library/Preferences/com.mackeeper.MacKeeper.Helper.plist
+	Library/Preferences/com.mackeeper.MacKeeper.plist
+	MacKeeper\ Backups
 )
 
 #################
